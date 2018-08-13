@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3CD7C5721221C0E00B02EAC /* ShuffleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD7C5621221C0E00B02EAC /* ShuffleExtension.swift */; };
+		A3CD7C5921221FFA00B02EAC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD7C5821221FFA00B02EAC /* Theme.swift */; };
+		A3CD7C5B2122212A00B02EAC /* HalloweenTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD7C5A2122212A00B02EAC /* HalloweenTheme.swift */; };
+		A3CD7C5D2122282E00B02EAC /* SpaceTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD7C5C2122282E00B02EAC /* SpaceTheme.swift */; };
+		A3CD7C5F21222B3C00B02EAC /* SportsTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD7C5E21222B3C00B02EAC /* SportsTheme.swift */; };
 		A3F80DA0212049B10049EA4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F80D9F212049B10049EA4F /* AppDelegate.swift */; };
 		A3F80DA2212049B10049EA4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F80DA1212049B10049EA4F /* ViewController.swift */; };
 		A3F80DA5212049B10049EA4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F80DA3212049B10049EA4F /* Main.storyboard */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3CD7C5621221C0E00B02EAC /* ShuffleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleExtension.swift; sourceTree = "<group>"; };
+		A3CD7C5821221FFA00B02EAC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A3CD7C5A2122212A00B02EAC /* HalloweenTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalloweenTheme.swift; sourceTree = "<group>"; };
+		A3CD7C5C2122282E00B02EAC /* SpaceTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTheme.swift; sourceTree = "<group>"; };
+		A3CD7C5E21222B3C00B02EAC /* SportsTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsTheme.swift; sourceTree = "<group>"; };
 		A3F80D9C212049B10049EA4F /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F80D9F212049B10049EA4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3F80DA1212049B10049EA4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +74,11 @@
 				A3FE44F92120558100B7DBDE /* Concentration.swift */,
 				A3FE44FB212055E000B7DBDE /* Card.swift */,
 				A3F80DAB212049B30049EA4F /* Info.plist */,
+				A3CD7C5821221FFA00B02EAC /* Theme.swift */,
+				A3CD7C5A2122212A00B02EAC /* HalloweenTheme.swift */,
+				A3CD7C5C2122282E00B02EAC /* SpaceTheme.swift */,
+				A3CD7C5E21222B3C00B02EAC /* SportsTheme.swift */,
+				A3CD7C5621221C0E00B02EAC /* ShuffleExtension.swift */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -151,8 +166,13 @@
 			files = (
 				A3F80DA2212049B10049EA4F /* ViewController.swift in Sources */,
 				A3F80DA0212049B10049EA4F /* AppDelegate.swift in Sources */,
+				A3CD7C5D2122282E00B02EAC /* SpaceTheme.swift in Sources */,
+				A3CD7C5F21222B3C00B02EAC /* SportsTheme.swift in Sources */,
 				A3FE44FA2120558100B7DBDE /* Concentration.swift in Sources */,
+				A3CD7C5921221FFA00B02EAC /* Theme.swift in Sources */,
+				A3CD7C5721221C0E00B02EAC /* ShuffleExtension.swift in Sources */,
 				A3FE44FC212055E000B7DBDE /* Card.swift in Sources */,
+				A3CD7C5B2122212A00B02EAC /* HalloweenTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

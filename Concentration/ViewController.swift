@@ -9,17 +9,39 @@
 import UIKit
 
 class ViewController: UIViewController {
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
-    
-    var flipCount = 0 {
-        didSet {
-            flipsCountLabel.text = "Flips: \(flipCount)"
-        }
-    }
+    var game = Concentration(numberOfPairsOfCards: 0)
+    var theme: Theme = HalloweenTheme()
+    let themes: [Theme] = [
+        HalloweenTheme(),
+        SpaceTheme(),
+        SportsTheme()
+    ]
+
     
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet weak var flipsCountLabel: UILabel!
-    var emojiChoices = ["👻", "👽", "👾", "🧠", "👁", "👅", "💄", "💩"]
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBAction func newGame(_ sender: UIButton) {
+        newGame()
+    }
+    override func viewDidLoad() {
+        newGame()
+    }
+    
+    func newGame() {
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+        
+        let numberOfThemes = themes.count
+        let themeIndex = Int(arc4random_uniform(UInt32(numberOfThemes)))
+        
+        theme = themes[themeIndex]
+        view.backgroundColor = theme.viewBackgrundColor
+        cardFaces = theme.cardFaces
+        cardEmojiMap.removeAll()
+        updateViewFromModel()
+    }
+
     
     @IBAction func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.index(of: sender){
@@ -28,10 +50,7 @@ class ViewController: UIViewController {
         } else {
             print("Error no such card")
         }
-        flipCount += 1
-
     }
-    
     
     func updateViewFromModel() {
         for index in cardButtons.indices {
@@ -42,19 +61,22 @@ class ViewController: UIViewController {
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             } else {
                 button.setTitle("", for: UIControlState.normal)
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0): #colorLiteral(red: 1, green: 0.5880618691, blue: 0, alpha: 1)
+                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0): theme.cardColor
             }
         }
+        
+        flipsCountLabel.text = "Flips: \(game.flipCount)"
+        scoreLabel.text = "Score: \(game.score)"
     }
     
-    var emoji = [Int:String]()
+    var cardFaces = [String]()
+    var cardEmojiMap = [Int:String]()
     func emojiForCard(_ card: Card) -> String {
-        if emoji[card.indentifier] == nil {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-            emoji[card.indentifier] = emojiChoices.remove(at: randomIndex)
-            
+        if cardEmojiMap[card.indentifier] == nil {
+            let emoji = cardFaces.remove(at: Int(arc4random_uniform(UInt32(cardFaces.count))))
+            cardEmojiMap[card.indentifier] = emoji
         }
-        return emoji[card.indentifier] ?? "?"
+        return cardEmojiMap[card.indentifier] ?? "?"
     }
 }
 
