@@ -26,7 +26,6 @@ class Concentration
                     cards[matchIndex].isMatched = true
                     score += 2
                 } else {
-                    print(1)
                     if (cards[index].wasTurned) {
                         score -= 1
                     }
@@ -42,7 +41,6 @@ class Concentration
                 cards[index].isFaceUp = true
                 if (cards[index].wasTurned) {
                     score -= 1
-                    print(2)
                 }
                 cards[index].wasTurned = true
                 
