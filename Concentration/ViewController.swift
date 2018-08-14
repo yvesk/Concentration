@@ -29,8 +29,12 @@ class ViewController: UIViewController {
         newGame()
     }
     
+    var numberOfPairsOfCards: Int {
+        return (cardButtons.count + 1) / 2
+    }
+    
     func newGame() {
-        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
         
         let numberOfThemes = themes.count
         let themeIndex = Int(arc4random_uniform(UInt32(numberOfThemes)))
