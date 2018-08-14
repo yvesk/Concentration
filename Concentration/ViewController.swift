@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var game = Concentration(numberOfPairsOfCards: 0)
-    var theme: Theme = HalloweenTheme()
+    var game:Concentration!
+    var theme: Theme!
     let themes: [Theme] = [
         HalloweenTheme(),
         SpaceTheme(),
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var flipsCountLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    @IBAction func newGame(_ sender: UIButton) {
+    @IBAction func touchNewGame(_ sender: UIButton) {
         newGame()
     }
     override func viewDidLoad() {

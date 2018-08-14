@@ -218,7 +218,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
-                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o6k-o8-IIH"/>
+                                    <action selector="touchNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o6k-o8-IIH"/>
                                 </connections>
                             </button>
                         </subviews>

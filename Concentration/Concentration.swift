@@ -18,20 +18,34 @@ class Concentration
     func chooseCard(at index: Int) {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFacUpCard {
+                if (index == matchIndex) {
+                    return
+                }
                 if cards[matchIndex].indentifier == cards[index].indentifier {
                     cards[index].isMatched = true
                     cards[matchIndex].isMatched = true
                     score += 2
                 } else {
-                    score = max(0, score - 1)
+                    print(1)
+                    if (cards[index].wasTurned) {
+                        score -= 1
+                    }
                 }
                 cards[index].isFaceUp = true
+                cards[index].wasTurned = true
+                
                 indexOfOneAndOnlyFacUpCard = nil
             } else {
                 for flipDownIndex in cards.indices {
                     cards[flipDownIndex].isFaceUp = false
                 }
                 cards[index].isFaceUp = true
+                if (cards[index].wasTurned) {
+                    score -= 1
+                    print(2)
+                }
+                cards[index].wasTurned = true
+                
                 indexOfOneAndOnlyFacUpCard = index
             }
             flipCount += 1
