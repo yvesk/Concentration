@@ -46,19 +46,14 @@ class Concentration
                     cards[matchIndex].isMatched = true
                     score += 2
                 } else {
-                    if (cards[index].wasTurned) {
+                    if cards[index].wasTurned || cards[matchIndex].wasTurned {
                         score -= 1
                     }
                 }
                 cards[index].isFaceUp = true
                 cards[index].wasTurned = true
-
+                cards[matchIndex].wasTurned = true
             } else {
-                if (cards[index].wasTurned) {
-                    score -= 1
-                }
-                cards[index].wasTurned = true
-                
                 indexOfOneAndOnlyFacUpCard = index
             }
             flipCount += 1
